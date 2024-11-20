@@ -14,7 +14,9 @@ def getHoursWorked(working):
     dayWorked = []
     #establish loop to get inputs of hours worked
     for i in range (working):
-        currentDay = int(input("Enter hours on Day #{0}: ".format(i + 1)))
+        currentDay = float(input("Enter hours on Day #{0}: ".format(i + 1)))
+        if currentDay < 0:
+            print("WARNING. You cannot work negative hours.")
         hoursWorked.append(currentDay)
         dayWorked.append(i + 1)
     return hoursWorked, dayWorked
